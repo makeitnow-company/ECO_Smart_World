@@ -3,13 +3,13 @@
 #define DHTPIN 25    
 DHT dht(DHTPIN, DHTTYPE);
 
-#define MOTOR_A1 2 //FAN
-#define MOTOR_A2 5 //FAN
+#define MOTOR_A1 16 //FAN
+#define MOTOR_A2 17 //FAN
 
 // 토양수분관리(2) 추가코드
 //**********************************
-#define MOTOR_B1 14 //WATER PUMP
-#define MOTOR_B2 15 //WATER PUMP
+#define MOTOR_B1 18 //WATER PUMP
+#define MOTOR_B2 19 //WATER PUMP
 #define SOIL 36
 int soil_value;
 bool pump_state;

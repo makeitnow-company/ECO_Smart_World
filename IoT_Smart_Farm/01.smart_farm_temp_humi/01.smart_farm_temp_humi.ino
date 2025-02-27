@@ -3,8 +3,8 @@
 #define DHTPIN 25    
 DHT dht(DHTPIN, DHTTYPE);
 
-#define MOTOR_A1 2 //FAN
-#define MOTOR_A2 5 //FAN
+#define MOTOR_A1 16 //FAN
+#define MOTOR_A2 17 //FAN
 
 int h, t;
 bool fan_state;
