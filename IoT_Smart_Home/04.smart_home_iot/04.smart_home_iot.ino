@@ -21,7 +21,7 @@ bool securityMode;
 
 #include <ESP32Servo.h>
 Servo myservo;
-#define SERVO_A 12
+#define SERVO_A 5
 #define BUZZER 26
 #define BUTTON 23
 bool door_state;
