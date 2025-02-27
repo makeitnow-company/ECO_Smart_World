@@ -22,7 +22,7 @@ bool blynk_gate;
 
 
 #include <ESP32Servo.h>
-#define SERVO_A 12
+#define SERVO_A 5
 Servo servo;
 
 int parking_charge = 1000;
