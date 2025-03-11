@@ -30,6 +30,7 @@ void doorControl(){
   }
 
   if(door_state){
+    myservo.attach(SERVO_A);
     myservo.write(90);
     delay(3000);
     door_state = false;

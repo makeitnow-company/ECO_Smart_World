@@ -11,6 +11,7 @@ bool door_state;
 #define LED_PIN_2F 25
 #define CDS 39
 bool led_state_1f, led_state_2f;
+bool night = true;
 // ******************************************
 
 // (3) 출입감지 시스템
@@ -39,8 +40,6 @@ void setup() {
 }
 
 void loop() {
-  doorControl();
-
   // (2) 층별 LED제어 하기
   // ******************************************
   floorLedControl();
@@ -48,7 +47,7 @@ void loop() {
 
   // (3) 출입감지 시스템
   // ******************************************
-  securitySystem();
+  // securitySystem();
   // ******************************************
   
   doorControl();
@@ -77,13 +76,13 @@ void playSiren(){
 // (2) 층별 LED제어 하기
 // ******************************************
 void floorLedControl(){
-  if(analogRead(CDS) < 200 && night==TRUE){
+  if(analogRead(CDS) < 200 && night==true){
     led_state_1f = true;
     led_state_2f = true;
     night = false;
   }
 
-  if(analogRead(CDS) >= 200 && night==FALSE){
+  if(analogRead(CDS) >= 200 && night==false){
     led_state_1f = false;
     led_state_2f = false;
     night = true;
@@ -113,6 +112,7 @@ void doorControl(){
   }
 
   if(door_state){
+    myservo.attach(SERVO_A);
     myservo.write(90);
     delay(3000);
     door_state = false;
